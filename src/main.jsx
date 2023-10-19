@@ -17,11 +17,13 @@ import Update from './update/Update';
 import Register from './register/Register';
 import AuthProvider from './authentication/AuthProvider';
 import PrivetRout from './privet/PrivetRout';
+import ErrorPage from './errorpage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layut></Layut>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
          path:'/',

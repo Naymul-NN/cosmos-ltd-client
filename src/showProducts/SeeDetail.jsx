@@ -1,22 +1,39 @@
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 
 const SeeDetail = () => {
+    const [cart, setCart] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/carts')
+        .then(res=>res.json())
+        .then(data=> setCart(data))
+    },[])
    const detailsProduct = useLoaderData();
    console.log(detailsProduct);
+
    const handleCartPost= () =>{
        console.log(detailsProduct);
+       const productExistsInCart = cart.find((item) => item._id === detailsProduct._id);
+       if (productExistsInCart) {
+        toast.error("This product is already in your cart");
+      } else {
       
        fetch('http://localhost:5000/carts',{
         method:'POST',
         headers:{
-            'content-type':"application/json"
+            'Content-Type':"application/json"
         },
         body:JSON.stringify(detailsProduct)
     })
     .then(res=>res.json())
     .then(data=>{
         console.log(data)
-    })
+        if(data.insertedId){
+            toast.success('Congratulation ! your cart seccessfull')
+        }
+       });
+       }
 
    }
 

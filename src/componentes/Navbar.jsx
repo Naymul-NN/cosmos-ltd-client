@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../authentication/AuthProvider";
 import toast from "react-hot-toast";
 
@@ -18,14 +18,66 @@ const Navbar = () => {
    };
 
 const link = <>
-               <ul>
-                <Link to ='/'>Home</Link>
+               
+                <li>
+               <NavLink
+            to="/"
+             style={({ isActive, isPending }) => {
+            return {
+               fontWeight: isActive ? "bold" : "red",
+                  color: isPending ? "red" : "",
+            };
+              }}
+             >
+             Home
+           </NavLink>
+           </li>
+                <li>
+               <NavLink className="px-7"
+            to="/login"
+             style={({ isActive, isPending }) => {
+            return {
+               fontWeight: isActive ? "bold" : "red",
+                  color: isPending ? "red" : "",
+            };
+              }}
+             >
+             Login
+           </NavLink>
+           </li>
+                <li>
+               <NavLink
+            to="/addProduct"
+             style={({ isActive, isPending }) => {
+            return {
+               fontWeight: isActive ? "bold" : "red",
+                  color: isPending ? "red" : "",
+            };
+              }}
+             >
+             AddProduct
+           </NavLink>
+           </li>
+                <li>
+               <NavLink
+            to="/mycart"
+             style={({ isActive, isPending }) => {
+            return {
+               fontWeight: isActive ? "bold" : "red",
+                  color: isPending ? "red" : "",
+            };
+              }}
+             >
+             My cart
+           </NavLink>
+           </li>
+                {/* <Link to ='/'>Home</Link> */}
                 {/* <Link to='/from'>From</Link> */}
-                <Link className="px-7" to ='/login'>Login</Link>
+                {/* <Link className="px-7" to ='/login'>Login</Link>
                 <Link to ='/addProduct'>AddProduct</Link>
-                <Link  className='pl-7' to ='/mycart'>My cart</Link>
+                <Link  className='pl-7' to ='/mycart'>My cart</Link> */}
                 
-               </ul>
+               
 
 </>
     

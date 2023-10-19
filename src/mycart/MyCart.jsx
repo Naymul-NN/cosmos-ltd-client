@@ -19,13 +19,13 @@ const MyCart = () => {
     }
     return (
         <div>
-            <h1> here you will see your added cart : {deleteCart.length} </h1>
-            <div className="grid grid-cols-2 gap-6">
+            <h1 className="text-center py-6"> Here you will see your added cart : {deleteCart.length} </h1>
+            <div className="grid grid-cols-2 gap-6 w-[80%] mx-auto bg-rose-100">
                 {
-                    deleteCart.map(cart => (
-                        <div key={cart._id}>
+                deleteCart.length > 0 ?  ( deleteCart.map(cart => (
+                        <div className="py-10" key={cart._id}>
                              <div className="card w-96 bg-base-100 shadow-xl">
-                             <figure><img src={cart.photo} alt="Shoes" /></figure>
+                             <figure><img className="h-72" src={cart.photo} alt="Shoes" /></figure>
                              <div className="card-body">
                              <h2 className="card-title">{cart.name}</h2>
                              <p>{cart.price} $</p>
@@ -34,6 +34,11 @@ const MyCart = () => {
                              </div>
                         </div>
                     ))
+                   ):(
+                    <div>
+                        <p className="text-4xl font-serif text-center">you have no cart yet</p>
+                    </div>
+                   )
                 }
             </div>
         </div>
