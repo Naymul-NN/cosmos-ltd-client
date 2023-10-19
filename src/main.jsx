@@ -16,6 +16,7 @@ import MyCart from './mycart/MyCart';
 import Update from './update/Update';
 import Register from './register/Register';
 import AuthProvider from './authentication/AuthProvider';
+import PrivetRout from './privet/PrivetRout';
 
 const router = createBrowserRouter([
   {
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/products/:brand',
-        element: <ShowProduct></ShowProduct>,
+        element:<PrivetRout> <ShowProduct></ShowProduct> </PrivetRout> ,
         loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brand}`) //.then((response) => response.json())
         
       },
