@@ -36,7 +36,7 @@ const Update = () => {
     return (
         <div>
             <h1> here you can update your product :{updateData._id} </h1>
-            <div>
+            <div className="bg-red-100">
                 <form onSubmit={handleUpdate}>
                     {/* row of input */}
                     <div className="flex gap-6">

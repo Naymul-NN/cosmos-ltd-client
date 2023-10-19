@@ -19,8 +19,8 @@ const Navbar = () => {
 
 const link = <>
                <ul>
-                <Link className="pr-7" to ='/'>Home</Link>
-                <Link to='/from'>From</Link>
+                <Link to ='/'>Home</Link>
+                {/* <Link to='/from'>From</Link> */}
                 <Link className="px-7" to ='/login'>Login</Link>
                 <Link to ='/addProduct'>AddProduct</Link>
                 <Link  className='pl-7' to ='/mycart'>My cart</Link>
@@ -33,7 +33,7 @@ const link = <>
    
 
     return (
-        <div>
+        <div className="py-7">
             <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -44,7 +44,7 @@ const link = <>
        {link}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <a className=" normal-case text-xl"><img className=" w-20" src="https://i.ibb.co/NmsjKGc/785.png" alt="" height="70px" /></a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
