@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../footer/Footer";
 import Banner from "../bannder/Banner";
+import BestProduct from "../bestProduct/BestProduct";
 
 const MainHome = () => {
     const brands = useLoaderData();
@@ -28,6 +29,7 @@ const MainHome = () => {
                 ))
             }
            </div>
+           <BestProduct></BestProduct>
           <div className="w-full py-4">
           <Footer></Footer>
           </div>
