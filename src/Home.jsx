@@ -1,35 +1,57 @@
+import { GoogleAuthProvider } from "firebase/auth";
+import { useContext, useState } from "react";
+import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "./authentication/AuthProvider";
 
 const Home = () => {
-    const handlePost = (e) =>{
-        e.preventDefault();
-        const form = e.target;
-        const email = form.email.value;
-        const password= form.password.value;
-        const user={email,password}
-        console.log(user);
-        fetch('http://localhost:5000/users',{
-          method:"POST",
-          headers:{
-            "content-type":"application/json"
-          },
-          body:JSON.stringify(user)
-        })
-        .then(res => res.json())
-        .then(data=>{
-            console.log(data);
-        })
+  const location = useLocation();
+  console.log(location);
+  const navigate = useNavigate();
+  const {googleLogin, userLogin} = useContext(AuthContext);
+  const [loginError,setLoginError]= useState("");
 
-    }
+  const provider = new GoogleAuthProvider();
+
+const handleLogin = (e) =>{
+  e.preventDefault();
+  const email = e.target.email.value; 
+  const password = e.target.password.value ;
+
+  setLoginError("");
+   userLogin(email,password)
+   .then(result =>{
+    console.log(result.user)
+    toast.success('log in successfull')
+    navigate(location?.state ? location.state: "/")
+   })
+   .catch(error=>{
+    console.error(error)
+    setLoginError("opps...! Invalid email or password")
+   })
+
+}
+
+const handlegooleLogIn=()=>{
+  googleLogin(provider)
+  .then(result => {
+    console.log(result.user)
+    toast.success("good job ! log in successfull ")
+    navigate(location?.state ? location.state: "/")
+  })
+  .catch(error =>{
+    console.error(error)
+  })
+}
+
+
     return (
         <div>
-            <h1>this is home page</h1>
-            <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-[500px] bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <div className="text-center lg:text-left">
-      <h1 className="text-5xl font-bold">Register now!</h1>
-    </div>
+
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form onSubmit={handlePost} className="card-body">
+      <form onSubmit={handleLogin} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -46,9 +68,12 @@ const Home = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
+          <button className="btn btn-primary">Login</button>
         </div>
+        <p className="text-red-500 font-bold">{loginError}</p>
+        <button onClick={handlegooleLogIn} className="btn">Go with google</button>
       </form>
+      <p>If you are new here! <Link to='/register' className="text-green-400 font-bold" >Register</Link></p>
     </div>
   </div>
 </div>
