@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import Footer from "../footer/Footer";
+import Banner from "../bannder/Banner";
 
 const MainHome = () => {
     const brands = useLoaderData();
@@ -10,7 +11,10 @@ const MainHome = () => {
     }
     return (
         <div>
-            <h1 className="text-center text-3xl font-bold pb-5">Thies are yor famous brand:{brands.length}</h1>
+            <div className="pb-[230px]">
+                <Banner></Banner>
+            </div>
+            <h1 className="text-center text-3xl font-bold pb-5">These are yor famous brand:{brands.length}</h1>
            <div className="grid grid-cols-3 gap-5 bg-blue-100">
            {
                 brands.map(brand => (
