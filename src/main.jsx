@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/addProduct',
-        element:<Addproduct></Addproduct>
+        element:<PrivetRout> <Addproduct></Addproduct> </PrivetRout>
       },
       {
         path: '/products/:brand',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/mycart',
-        element:<MyCart></MyCart>,
+        element:<PrivetRout> <MyCart></MyCart></PrivetRout>,
         loader:() => fetch('http://localhost:5000/carts')
       },
       {
