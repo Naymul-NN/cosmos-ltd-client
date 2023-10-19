@@ -1,6 +1,8 @@
 import Rating from "react-rating";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaStar,FaStarHalfAlt,FaRegStar } from 'react-icons/fa';
+import Slider from "../slider/Slider";
+import Offer from "../slider/Offer";
 
 
 const ShowProduct = () => {
@@ -11,7 +13,11 @@ const ShowProduct = () => {
 
     return (
         <div >
-            <h1>see the product here: {productdata.length}</h1>
+         <div className=" lg:flex gap-5" >
+        <div className="w-[600px] h-[400px]"> <Slider></Slider></div>
+        <div><Offer></Offer></div>
+         </div>
+            <h1 className=" py-7 text-center">see the product here: {productdata.length}</h1>
              <div className="grid grid-cols-2 gap-7 w-[80%] mx-auto pl-24 py-10 bg-green-100">
              {
                 productdata.length > 0 ?  ( productdata.map(product =>(

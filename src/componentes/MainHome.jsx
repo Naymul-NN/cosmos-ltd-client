@@ -16,7 +16,7 @@ const MainHome = () => {
                 <Banner></Banner>
             </div>
             <h1 className="text-center text-3xl font-bold pb-5">These are yor famous brand:{brands.length}</h1>
-           <div className="grid grid-cols-3 gap-5 bg-blue-100">
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 bg-blue-100">
            {
                 brands.map(brand => (
                     <div  key={brand._id} className="card w-96  shadow-xl bg-pink-100 mt-5 ml-7">
