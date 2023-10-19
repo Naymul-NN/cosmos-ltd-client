@@ -22,7 +22,7 @@ const BestProduct = () => {
         <div>
           <h1 className="text-2xl py-7 font-bold">Some of your product work </h1>
           <div className=" lg:flex gap-5 bg-green-100">
-            <Marquee>
+            <Marquee pauseOnHover={true} speed={30} direction="right">
             <div><img className="w-72 h-52" src="https://i.ibb.co/1n2FcLW/istockphoto-1331637318-612x612.jpg" alt="" /></div>
             <div><img className="w-72 h-52" src="https://i.ibb.co/qFz4j1V/1491480245-slide2-1491416592-2.jpg" alt="" /></div>
             <div><img className="w-72 h-52" src="https://i.ibb.co/JCMG6r3/360-F-637746039-DZohy-Wx-EXZu7-Yox7-Dy-Uj-Krdd1yi-O03h-B.jpg" alt="" /></div>
