@@ -39,13 +39,14 @@ const SeeDetail = () => {
 
     return (
         <div>
-            <h1>see here details : {detailsProduct._id}</h1>
-            <div>
+            <h1 className="text-center text-2xl pb-6">See here details </h1>
+            <div className="flex justify-center items-center">
             <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img src={detailsProduct.photo} alt="Shoes" /></figure>
             <div className="card-body">
-            <h2 className="card-title">{detailsProduct.name}</h2>
-            <p>{detailsProduct.price} $</p>
+            <h2 className="card-title">Name: {detailsProduct.name}</h2>
+            <p>price: {detailsProduct.price} $</p>
+            <p>{detailsProduct.details} </p>
             <p><button onClick={handleCartPost} className="btn">Add to cart</button></p>
             </div>
             </div>

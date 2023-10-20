@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 
 const Addproduct = () => {
     const handleAddProduct = (e) =>{
@@ -26,6 +27,9 @@ const Addproduct = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
+            if(data.insertedId){
+                toast.success("congraculation ! your product add successfully")
+            }
         })
     }
 

@@ -8,7 +8,7 @@ const MainHome = () => {
 
     const handleproduct = (brand) =>{
         console.log(brand);
-       fetch(`http://localhost:5000/products/${brand}`)
+       fetch(`https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/products/${brand}`)
     }
     return (
         <div>
@@ -16,7 +16,7 @@ const MainHome = () => {
                 <Banner></Banner>
             </div>
             <h1 className="text-center text-3xl font-bold pb-5">These are yor famous brand:{brands.length}</h1>
-           <div className="grid grid-cols-1 items-center lg:grid-cols-3 gap-5 bg-blue-100">
+           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 bg-blue-100">
            {
                 brands.map(brand => (
                     <div  key={brand._id} className="card w-96  shadow-xl bg-pink-100 mt-5 lg:ml-7">
