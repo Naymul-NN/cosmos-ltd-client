@@ -36,7 +36,7 @@ const Addproduct = () => {
             <div>
                 <form onSubmit={handleAddProduct}>
                     {/* row of input */}
-                    <div className="flex gap-6">
+                    <div className="grid lg:flex lg:gap-6">
                     <div className="form-control md:w-1/2">
                    <label className="label">
                    <span className="label-text">Product name</span>
@@ -58,7 +58,7 @@ const Addproduct = () => {
                  </label>
                  </div>
                     </div>
-                    <div className="flex gap-6">
+                    <div className="grid lg:flex lg:gap-6">
                     <div className="form-control md:w-1/2">
                    <label className="label">
                    <span className="label-text">Type</span>
@@ -76,11 +76,11 @@ const Addproduct = () => {
                    </label>
                      <label className="input-group">
                  <span>$USD</span>
-                 <input type="text" placeholder="test" name="price" className="input input-bordered w-full" />
+                 <input type="text" placeholder="price" name="price" className="input input-bordered w-full" />
                  </label>
                  </div>
                     </div>
-                    <div className="flex gap-6">
+                    <div className="grid lg:flex lg:gap-6">
                     <div className="form-control md:w-1/2">
                    <label className="label">
                    <span className="label-text">Rating</span>

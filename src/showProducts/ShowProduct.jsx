@@ -13,17 +13,17 @@ const ShowProduct = () => {
 
     return (
         <div >
-         <div className=" lg:flex gap-5" >
-        <div className="w-[600px] h-[400px]"> <Slider></Slider></div>
+         <div className="grid grid-cols-1 lg:flex gap-5" >
+        <div className="lg:w-[600px] lg:h-[400px]"> <Slider></Slider></div>
         <div><Offer></Offer></div>
          </div>
             <h1 className=" py-7 text-center">see the product here: {productdata.length}</h1>
-             <div className="grid grid-cols-2 gap-7 w-[80%] mx-auto pl-24 py-10 bg-green-100">
+             <div className="grid lg:grid-cols-2 gap-7 lg:w-[80%] mx-auto lg:pl-24 py-10 bg-green-100">
              {
                 productdata.length > 0 ?  ( productdata.map(product =>(
                        <div key={product._id}>
                            <div className="card w-96 bg-base-100 shadow-xl">
-                        <figure><img className="h-52" src={product.photo} alt="Shoes" /></figure>
+                        <figure><img className="h-80 w-[90%]" src={product.photo} alt="Shoes" /></figure>
                          <div className="card-body">
                         <h2 className="card-title">Name: { product.name}</h2>
                          <p>Brand : {product.brand}</p>

@@ -20,7 +20,7 @@ const MyCart = () => {
     return (
         <div>
             <h1 className="text-center py-6"> Here you will see your added cart : {deleteCart.length} </h1>
-            <div className="grid grid-cols-2 gap-6 w-[80%] mx-auto bg-rose-100">
+            <div className="grid lg:grid-cols-2 gap-6 lg:w-[80%] mx-auto bg-rose-100">
                 {
                 deleteCart.length > 0 ?  ( deleteCart.map(cart => (
                         <div className="py-10" key={cart._id}>

@@ -39,7 +39,7 @@ const Update = () => {
             <div className="bg-red-100">
                 <form onSubmit={handleUpdate}>
                     {/* row of input */}
-                    <div className="flex gap-6">
+                    <div className="grid lg:flex lg:gap-6">
                     <div className="form-control md:w-1/2">
                    <label className="label">
                    <span className="label-text">Product name</span>
@@ -61,7 +61,7 @@ const Update = () => {
                  </label>
                  </div>
                     </div>
-                    <div className="flex gap-6">
+                    <div className="lg:flex lg:gap-6">
                     <div className="form-control md:w-1/2">
                    <label className="label">
                    <span className="label-text">Type</span>
@@ -83,7 +83,7 @@ const Update = () => {
                  </label>
                  </div>
                     </div>
-                    <div className="flex gap-6">
+                    <div className="lg:flex lg:gap-6">
                     <div className="form-control md:w-1/2">
                    <label className="label">
                    <span className="label-text">Rating</span>
