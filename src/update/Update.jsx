@@ -20,7 +20,7 @@ const Update = () => {
 
         // send data to server then database
 
-        fetch(`http://localhost:5000/product/${updateData._id}`,{
+        fetch(`https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/product/${updateData._id}`,{
             method:'PUT',
             headers:{
                 'content-type':"application/json"

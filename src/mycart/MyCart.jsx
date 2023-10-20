@@ -7,7 +7,7 @@ const MyCart = () => {
 
     const handledeleteCart=(_id)=>{
         console.log(_id);
-        fetch(`http://localhost:5000/carts/${_id}`,{
+        fetch(`https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/carts/${_id}`,{
             method:"DELETE"
         })
          .then(res => res.json()) 

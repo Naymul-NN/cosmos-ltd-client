@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
          path:'/',
          element:<MainHome></MainHome>,
-         loader:() => fetch('http://localhost:5000/brands'),
+         loader:() => fetch('https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/brands'),
       },
       {
         path:'/addProduct',
@@ -37,23 +37,23 @@ const router = createBrowserRouter([
       {
         path: '/products/:brand',
         element:<PrivetRout> <ShowProduct></ShowProduct> </PrivetRout> ,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brand}`) //.then((response) => response.json())
+        loader: ({ params }) => fetch(`https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/products/${params.brand}`) //.then((response) => response.json())
         
       },
       {
       path:'/seeDetails/:id',
       element:<SeeDetail></SeeDetail>,
-      loader:({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+      loader:({params}) => fetch(`https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/product/${params.id}`)
       },
       {
         path:'/update/:id',
         element:<Update></Update>,
-        loader:({params}) => fetch(`http://localhost:5000/product/${params.id}`)
+        loader:({params}) => fetch(`https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/product/${params.id}`)
       },
       {
         path:'/mycart',
         element:<PrivetRout> <MyCart></MyCart></PrivetRout>,
-        loader:() => fetch('http://localhost:5000/carts')
+        loader:() => fetch('https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/carts')
       },
       {
         path:'/login',
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
       {
         path:'from',
         element:<Form></Form>,
-        loader:() => fetch('http://localhost:5000/users')
+        loader:() => fetch('https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/users')
       }
     ]
     

@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 const SeeDetail = () => {
     const [cart, setCart] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/carts')
+        fetch('https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/carts')
         .then(res=>res.json())
         .then(data=> setCart(data))
     },[])
@@ -19,7 +19,7 @@ const SeeDetail = () => {
         toast.error("This product is already in your cart");
       } else {
       
-       fetch('http://localhost:5000/carts',{
+       fetch('https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/carts',{
         method:'POST',
         headers:{
             'Content-Type':"application/json"
