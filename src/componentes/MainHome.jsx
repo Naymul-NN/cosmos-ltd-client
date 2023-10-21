@@ -8,7 +8,7 @@ const MainHome = () => {
 
     const handleproduct = (brand) =>{
         console.log(brand);
-       fetch(`https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/products/${brand}`)
+       fetch(`http://localhost:5000/products/${brand}`)
     }
     return (
         <div>

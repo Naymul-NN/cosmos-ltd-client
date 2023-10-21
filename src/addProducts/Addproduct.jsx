@@ -17,7 +17,7 @@ const Addproduct = () => {
 
         // send data to server then database
 
-        fetch('https://mongodb-express-83yh9mh1e-naymul-islams-projects.vercel.app/products',{
+        fetch('http://localhost:5000/products',{
             method:'POST',
             headers:{
                 'content-type':"application/json"
